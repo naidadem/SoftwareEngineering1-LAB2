@@ -1,0 +1,52 @@
+Lab 2: High- and Low-Level Design
+
+Assignment 2.1
+
+In this assignment your task is to model a distributed music player which allows the users to remotely play their songs without the need to download them on their device. The detailed description of the system is given below.
+
+
+The music player has the basic functionality of allowing the users to listen their favorite music. The system is accessible for users that have either basic or premium account. To create a basic account, the user has to provide his/hers name, address, city, country of residence and email. If the user wants to create a premium account, then they must provide bank account details (card no, card holder name and validity). At the moment of creating the premium account the user is charged the predefined amount of money. All users are allowed to terminate their own accounts at any time.
+
+
+The repository of the service is basically a collection of songs. Each song is characterized by its unique identifier, title, artist, genre and the year of release. Every song is part of an album containing one or more songs. For each album the player shows the information about: the artist, title, release year and the record label. Each genre is represented via its name and a short description. The player stores detailed information about the artists which is displayed on a personalized page of the artist. The personalized artist page shows the following information: first and last name, country and a short biography. The user can play either an individual song or an album. Playing of the song or album is performed by pressing the "Play" button. A song can be played directly or indirectly from an album. In similar fashion, users can pause (press "Pause") or stop (press "Stop") songs or albums. 
+
+
+To facilitate easier browsing, the system categorizes artists and albums in the following way: each artist can be listed in multiple genres and one genre can have multiple artists. In order to provide a personalized experience, the system allows creating playlists, a feature available only for the premium users. Each playlist has exactly one owner but can be access by multiple users, be they premium or basic. A playlist represents a collection of songs. Each playlist has a title, creator (user who created it) and a short description. The playlist may be private or public. User can play playlist in similar fashion like the albums. Any user can create a playlist, while existing playlist can be modified and/or deleted only by its creator (the user who created it). Modification includes adding/removing songs or editing the playlist's information.
+
+
+All songs, albums, artists and genres are created and managed by the system administrator. Management of the fore mentioned entities includes modification and deletion. The administrator has also the possibility of terminating user accounts or to delete existing playlists.
+
+
+For creating a revenue, the streaming service relies on advertisements (ads). An ad is created by a client and is provided as such for display. The client requests a duration for displaying the ad and number of displays per day. Consequently, for each ad the system stores the following information: unique identifier, name (title), url to the ad (the ad is created and hosted by the customer), time for display, number of displays per day. Additionally, the customer can select the ad to be associated to one or more artists, meaning that the ad will be displayed only on a track from that set of artists.
+
+1. Class Diagram
+
+Create a class diagram to model the music player given in the description. The classes should contain all necessary attributes and operations with signatures (arguments and return type). Write documentation for things that you think are not obvious to the reader and the assumptions that you may make. You can assume the existence of a database and the user interface.
+
+2. Sequence Diagram
+
+Create a sequence diagram that shows how the interaction between a user and a playlist (playing the songs in the playlist).
+
+Assignment 2.2
+
+1. State Machine diagram
+
+Your task is to model the oxygen supplying system in a mine. The system consists of 4 components: 
+
+- oxygen level sensor (input) 
+- pump temperature sensor (input) 
+- oxygen pump (output) 
+- alarm (output)
+
+The oxygen level sensor measures the level of oxygen inside the mine (in percent), with range of values between 1 and 100. The oxygen pump has 3 modes of operation: "off", "normal" and "turbo", whereas the alarm can be either "on" or "off".
+
+The operational rules for the oxygen supplying system are: if the oxygen level is above 90, the oxygen pump shall be switched off in order to save energy and to maximize its lifetime. If the oxygen level is between 60 and 90 the pump shall be in normal operational mode. Once the oxygen level drops bellow 60, but it is still above 50 the oxygen pump is switched to turbo mode. If the oxygen level drops below 50, the oxygen pump resumes to work in turbo mode, but additionally the alarm which signalizes for the workers to evacuate shall be turned on. The alarm remains on and the pump in turbo mode until the oxygen level is brought back to above 60.
+
+The normal operational temperature of the pump is below 70 degrees. If at any point the temperature of the pump exceeds the threshold, in order to prevent overheating the pump must be shut down and the alarm shall be turned on. After the temperature of the pump goes below the threshold, the pump shall be turned to operation again.
+
+Draw a state chart diagram defining the behavior of the oxygen supplying system. For each state, define the values of the oxygen pump and the alarm.
+
+Reporting the Assignment
+
+Use Astah tool to create the class , sequence and state machine diagrams. Make sure that the four diagrams are in the same “.astah” file. Rename your astah file according to your group number (e.g., Gxx).
+Sometimes you may need to justify your diagram or clarify some parts in it, in this case remember that you can use the Note notation that is provided by the tool.
